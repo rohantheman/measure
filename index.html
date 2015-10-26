@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Measurement Convertor</title>
+  <meta charset="utf-8" />
+</head>
+<script src="measurement_convertor.js"></script>
+
+<body>
+  Please enter the numeric value that you would like to convert:<br>
+  <input type="text" id="text-input-value" value="100">
+
+  <select id="unit-input" onchange="getInputValue()">
+    <option>Choose the unit value</option>
+    <option value="pounds">Pounds</option>
+    <option value="ounces">Ounces</option>
+    <option value="stones">Stone</option>
+    <option value="grams">Grams</option>
+    <option value="kilograms">Kilograms</option>
+    <option value="us-tons">US Ton</option>
+  </select><br>
+  <span id="input-display"></span>
+
+  <select id="unit-output" onchange="getOutputValue()">
+    <option>Choose the conversion unit</option>
+    <option value="pounds">Pounds</option>
+    <option value="ounces">Ounces</option>
+    <option value="stone">Stone</option>
+    <option value="grams">Grams</option>
+    <option value="kilograms">Kilograms</option>
+    <option value="us-ton">US Ton</option>
+  </select>
+  <div id="output-display"></div>
+
+</body>
+
+</html>

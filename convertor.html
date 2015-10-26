@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Measurement Convertor</title>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        Please choose the unit of measure that you would like to convert:
+        <div id="choice" onclick="getSelectedOption()" >
+            <label>Weight <input type="radio" name="conversionType" value="Weight"/></label>
+            <label>Length <input type="radio" name="conversionType" value="Length"/></label>
+            <label>Area <input type="radio" name="conversionType" value="Area"/></label>
+            <label>Volume <input type="radio" name="conversionType" value="Volume"/></label>
+        </div>
+
+        <div id="weightConvertor" style="display:none">
+            Enter the numeric value of the weight that you would like to convert: <input type="text" id="input" value="100"><br>
+            <label>Pounds <input type="radio" name="weightUnits" value="Pounds"/></label>
+            <label>Kilograms <input type="radio" name="weightUnits" value="Kilograms"></label>
+        </div>
+
+        <div id="lengthConvertor" style="display:none">
+            Enter the numeric value of the length that you would like to convert: <input type="text" id="input" value="100"><br>
+            <label>Miles <input type="radio" name="weightUnits" value="Miles"/></label>
+            <label>Kilometers <input type="radio" name="weightUnits" value="Kilometers"></label>
+        </div>
+
+        <div id="areaConvertor" style="display:none">
+            Enter the numeric value of the area that you would like to convert: <input type="text" id="input" value="100"><br>
+            <label>Square Feet <input type="radio" name="weightUnits" value="Square Feet"/></label>
+            <label>Square Meters <input type="radio" name="weightUnits" value="Square Meters"></label>
+        </div>
+
+        <div id="volumeConvertor" style="display:none">
+            Enter the numeric value of the volume that you would like to convert: <input type="text" id="input" value="100"><br>
+            <label>Gallons<input type="radio" name="weightUnits" value="Gallons"/></label>
+            <label>Litres <input type="radio" name="weightUnits" value="Litres"></label>
+        </div>
+
+        <div id="tempConvertor" style="display:none">
+            Enter the numeric value that you would like to convert: <input type="text" id="input" value="100"><br>
+            <label>C <input type="radio" name="tempUnits" value="Celcius"/></label>
+            <label>F <input type="radio" name="tempUnits" value="Fahrenheit"></label>
+        </div>
+
+        <div id="convertControl" style="display:none">
+            <br>
+            <button id="convertButton">Convert</button><br>
+            <p id="output"></p>
+        </div>
+
+        <script src="main.js"></script>
+
+    </body>
+</html>
