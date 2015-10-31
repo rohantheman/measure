@@ -6,29 +6,32 @@ var unitOutput = null;
 var poundScalar, ounceScalar, stoneScalar, gramScalar, kilogramScalar, usTonScalar;
 
 //express each unit of measure as a scalar value of a kilogram
-poundScalar =  0.454;
-ounceScalar = 0.028;
-stoneScalar = 6.350;
+poundScalar =  0.453592;
+ounceScalar = 0.0283495;
+stoneScalar = 6.35029;
 gramScalar = 0.001;
 kilogramScalar = 1;
 usTonScalar = 907.185;
 
-//get the input for input units
+//get the input values for input units
 function getInputValue() {
   var numberValue = document.getElementById('text-input-value').value;
   unitInput = document.getElementById('unit-input').value;
   document.getElementById("input-display").innerHTML = "What unit of measure would you like to convert " + " " + numberValue + " " + unitInput + " ?";
 }
+
 //get the input for output units
 function getOutputValue() {
   unitOutput = document.getElementById('unit-output').value;
   var numberValue = document.getElementById('text-input-value').value;
-  var calculatedValue = convertValue(normalise(numberValue, unitInput), unitOutput);
+  //calculate and display values to web page
+  var calculatedValue = Math.rnd(convertValue(normalise(numberValue, unitInput), unitOutput));
   document.getElementById("output-display").innerHTML = numberValue + " " + unitInput + " is equal to " + calculatedValue + " " + unitOutput;
 }
 
 //convert the value input to a kilogram scalar
 function normalise(input, givenUnitElementValue) {
+    //check the value selected in the checkbox and return the appropriate value
   switch (givenUnitElementValue) {
     case "pounds":
       return input * poundScalar;
@@ -52,6 +55,7 @@ function normalise(input, givenUnitElementValue) {
 }
 //convert the calculated kilogram scalar to the final value
 function convertValue(normalisedValue, requestedUnitElementValue) {
+  //check the value selected in the checkbox and invoke the appropriate function
   switch (requestedUnitElementValue) {
     case "pounds":
       return normalisedValue / poundScalar;
