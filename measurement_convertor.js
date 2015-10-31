@@ -25,7 +25,7 @@ function getOutputValue() {
   unitOutput = document.getElementById('unit-output').value;
   var numberValue = document.getElementById('text-input-value').value;
   //calculate and display values to web page
-  var calculatedValue = convertValue(normalise(numberValue, unitInput), unitOutput).toFixed(2);
+  var calculatedValue = convertValue(normalise(numberValue, unitInput), unitOutput).toFixed(3);
   document.getElementById("output-display").innerHTML = numberValue + " " + unitInput + " is equal to " + calculatedValue + " " + unitOutput;
 }
 
@@ -53,6 +53,7 @@ function normalise(input, givenUnitElementValue) {
 
   }
 }
+
 //convert the calculated kilogram scalar to the final value
 function convertValue(normalisedValue, requestedUnitElementValue) {
   //check the value selected in the checkbox and invoke the appropriate function
