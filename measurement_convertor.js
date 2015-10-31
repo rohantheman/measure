@@ -13,68 +13,63 @@ gramScalar = 0.001;
 kilogramScalar = 1;
 usTonScalar = 907.185;
 
-//get the input for each
+//get the input for input units
 function getInputValue() {
   var numberValue = document.getElementById('text-input-value').value;
-   unitInput = document.getElementById('unit-input').value;
+  unitInput = document.getElementById('unit-input').value;
   document.getElementById("input-display").innerHTML = "What unit of measure would you like to convert " + " " + numberValue + " " + unitInput + " ?";
 }
-
+//get the input for output units
 function getOutputValue() {
   unitOutput = document.getElementById('unit-output').value;
- var numberValue = document.getElementById('text-input-value').value;
- var calculatedValue = convertValue(normalise(numberValue,unitInput),unitOutput);
- alert(numberValue);
-  alert(unitInput);
-  alert(unitOutput);
- alert(normalise(numberValue,unitInput));
- alert(convertValue(normalise(numberValue,unitInput),unitOutput));
- document.getElementById("output-display").innerHTML = numberValue + " " + unitInput + " is equal to "+ calculatedValue + unitOutput;
+  var numberValue = document.getElementById('text-input-value').value;
+  var calculatedValue = convertValue(normalise(numberValue, unitInput), unitOutput);
+  document.getElementById("output-display").innerHTML = numberValue + " " + unitInput + " is equal to " + calculatedValue + " " + unitOutput;
 }
 
-function normalise(input,givenUnitElementValue){
-  
-  switch(givenUnitElementValue){
-  case "pounds":
-  return input * poundScalar;
-  break;
-  case "ounces":
-  return input * ounceScalar;
-  break;
-  case "stones":
-  return input * stoneScalar;
-  break;
-  case "grams":
-  return input *gramScalar;
-  break;
-   case "kilograms":
-  return input * kilogramScalar;
-  break;
-     case "us-tons":
-  return input * usTonScalar;
-  break;
+//convert the value input to a kilogram scalar
+function normalise(input, givenUnitElementValue) {
+  switch (givenUnitElementValue) {
+    case "pounds":
+      return input * poundScalar;
+
+    case "ounces":
+      return input * ounceScalar;
+
+    case "stones":
+      return input * stoneScalar;
+
+    case "grams":
+      return input * gramScalar;
+
+    case "kilograms":
+      return input * kilogramScalar;
+
+    case "us-tons":
+      return input * usTonScalar;
+
   }
 }
+//convert the calculated kilogram scalar to the final value
+function convertValue(normalisedValue, requestedUnitElementValue) {
+  switch (requestedUnitElementValue) {
+    case "pounds":
+      return normalisedValue / poundScalar;
 
-function convertValue(normalisedValue,requestedUnitElementValue){
-   switch(requestedUnitElementValue){
-  case "pounds":
-  return normalisedValue / poundScalar;
-  break;
-  case "ounces":
-  return normalisedValue / ounceScalar;
-  break;
-  case "stones":
-  return normalisedValue / stoneScalar;
-  break;
-  case "grams":
-  return normalisedValue / gramScalar;
-  break;
-   case "kilograms":
-  return normalisedValue / kilogramScalar;
-  break;
-     case "us-tons":
-  return normalisedValue / usTonScalar;
-  break;
+    case "ounces":
+      return normalisedValue / ounceScalar;
+
+    case "stones":
+      return normalisedValue / stoneScalar;
+
+    case "grams":
+      return normalisedValue / gramScalar;
+
+    case "kilograms":
+      return normalisedValue / kilogramScalar;
+
+    case "us-tons":
+      return normalisedValue / usTonScalar;
+
   }
 }
