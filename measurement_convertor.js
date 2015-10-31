@@ -36,7 +36,7 @@ function normalise(input, givenUnitElementValue) {
     case "ounces":
       return input * ounceScalar;
 
-    case "stones":
+    case "stone":
       return input * stoneScalar;
 
     case "grams":
@@ -59,7 +59,7 @@ function convertValue(normalisedValue, requestedUnitElementValue) {
     case "ounces":
       return normalisedValue / ounceScalar;
 
-    case "stones":
+    case "stone":
       return normalisedValue / stoneScalar;
 
     case "grams":
