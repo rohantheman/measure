@@ -23,7 +23,8 @@
   </select>
   <br>
   <span id="input-display"></span>
-<p id="message" style="display: none;"></p>
+
+<br>
   <select id="unit-output" onchange="getOutputValue()">
     <option>Choose the conversion unit</option>
     <option value="pounds">Pounds</option>
@@ -34,7 +35,8 @@
     <option value="us-ton">US Ton</option>
   </select>
   <div id="output-display"></div>
-
+<span id="message" style="display: none;"></span>
+<button type="button" onclick="clearDisplay()" style="display: none;>Clear</button>
 </body>
 
 </html>
