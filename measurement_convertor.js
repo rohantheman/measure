@@ -16,12 +16,21 @@ usTonScalar = 907.185;
 //get the input values for input units
 function getInputValue() {
   var numberValue = document.getElementById('text-input-value').value;
+   try { 
+        if(numberValue == "") throw "The field is empty!";
+        if(isNaN(numberValue)) throw "not a number";
+         numberValue = Number(numberValue);
+    }
+    catch(err) {
+       alert(err) ;
+    }
   unitInput = document.getElementById('unit-input').value;
   document.getElementById("input-display").innerHTML = "What unit of measure would you like to convert " + " " + numberValue + " " + unitInput + " ?";
 }
 
 //get the input for output units
 function getOutputValue() {
+  //window.location.reload();
   unitOutput = document.getElementById('unit-output').value;
   var numberValue = document.getElementById('text-input-value').value;
  //Check if value for unitInput is null
@@ -33,6 +42,7 @@ function getOutputValue() {
    //alert("You must select a unit of measure for the value that you would like to convert!");
     document.getElementById("message").innerHTML = "You must select a unit of measure for the value that you would like to convert!";
     document.getElementById("message").style.display = "block";
+    
 }
   
 }
@@ -60,6 +70,10 @@ function normalise(input, givenUnitElementValue) {
       return input * usTonScalar;
 
   }
+}
+
+function clearDisplay(){
+  window.location.reload();
 }
 
 //convert the calculated kilogram scalar to the final value
