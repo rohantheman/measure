@@ -25,8 +25,15 @@ function getOutputValue() {
   unitOutput = document.getElementById('unit-output').value;
   var numberValue = document.getElementById('text-input-value').value;
   //calculate and display values to web page
-  var calculatedValue = convertValue(normalise(numberValue, unitInput), unitOutput).toFixed(3);
+  if(unitInput != null){
+    var calculatedValue = convertValue(normalise(numberValue, unitInput), unitOutput).toFixed(3);
   document.getElementById("output-display").innerHTML = numberValue + " " + unitInput + " is equal to " + calculatedValue + " " + unitOutput;
+  }else { 
+   //alert("You must select a unit of measure for the value that you would like to convert!");
+    document.getElementById("message").innerHTML = "You must select a unit of measure for the value that you would like to convert!";
+    document.getElementById("message").style.display = "block";
+}
+  
 }
 
 //convert the value input to a kilogram scalar
