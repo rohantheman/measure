@@ -24,8 +24,9 @@ function getInputValue() {
 function getOutputValue() {
   unitOutput = document.getElementById('unit-output').value;
   var numberValue = document.getElementById('text-input-value').value;
-  //calculate and display values to web page
+ //Check if value for unitInput is null
   if(unitInput != null){
+     //calculate and display values to web page
     var calculatedValue = convertValue(normalise(numberValue, unitInput), unitOutput).toFixed(3);
   document.getElementById("output-display").innerHTML = numberValue + " " + unitInput + " is equal to " + calculatedValue + " " + unitOutput;
   }else { 
