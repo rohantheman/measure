@@ -10,7 +10,7 @@
 <body>
   Please enter the numeric value that you would like to convert:
   <br>
-  <input type="text" id="text-input-value" value="100">
+  <input type="text" id="text-input-value" value="">
 
   <select id="unit-input" onchange="getInputValue()">
     <option>Choose the unit value</option>
@@ -23,9 +23,7 @@
   </select>
   <br>
   <span id="input-display"></span>
-
-<br>
-  <select id="unit-output" onchange="getOutputValue()">
+  <select id="unit-output" onchange="getOutputValue()">measurement_convertor.js
     <option>Choose the conversion unit</option>
     <option value="pounds">Pounds</option>
     <option value="ounces">Ounces</option>
@@ -35,8 +33,10 @@
     <option value="us-ton">US Ton</option>
   </select>
   <div id="output-display"></div>
-<span id="message" style="display: none;"></span>
-<button type="button" onclick="clearDisplay()" style="display: none;>Clear</button>
+<div id="message-area" style="display: none;">
+<span id="message" ></span>
+<button type="button" onclick="clearDisplay()">Clear</button>
+</div>
 </body>
 
 </html>
