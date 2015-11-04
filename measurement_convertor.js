@@ -17,7 +17,7 @@ usTonScalar = 907.185;
 function getInputValue() {
   var inputValue = document.getElementById('text-input-value').value;
    try {
-        if(inputValue == "") throw "The field is empty!";
+        if(inputValue === "") throw "The field is empty!";
         if(isNaN(inputValue)) throw "not a number";
          inputValue = Number(inputValue);
     }
