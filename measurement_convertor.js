@@ -15,17 +15,19 @@ usTonScalar = 907.185;
 
 //get the input values for input units
 function getInputValue() {
-  var numberValue = document.getElementById('text-input-value').value;
+  var inputValue = document.getElementById('text-input-value').value;
    try {
-        if(numberValue == "") throw "The field is empty!";
-        if(isNaN(numberValue)) throw "not a number";
-         numberValue = Number(numberValue);
+        if(inputValue == "") throw "The field is empty!";
+        if(isNaN(inputValue)) throw "not a number";
+         inputValue = Number(inputValue);
     }
-    catch(err) {
-       alert(err) ;
+    catch(e) {
+       //alert(e) ;
+document.getElementById("message").innerHTML = e;
+ document.getElementById("message-area").style.display = "block";
     }
   unitInput = document.getElementById('unit-input').value;
-  document.getElementById("input-display").innerHTML = "Pleasee choose the unit of measure to which you would like to convert " + " " + numberValue + " " + unitInput + " =>";
+  document.getElementById("input-display").innerHTML = "Please choose the unit of measure to which you would like to convert " + " " + inputValue + " " + unitInput + " =>";
 }
 
 //get the input for output units
