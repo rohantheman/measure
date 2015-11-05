@@ -16,16 +16,15 @@ usTonScalar = 907.185;
 //get the input values for input units
 function getInputValue() {
   var inputValue = document.getElementById('text-input-value').value;
-   try {
-        if(inputValue === "") throw "The field is empty!";
-        if(isNaN(inputValue)) throw "not a number";
-         inputValue = Number(inputValue);
-    }
-    catch(e) {
-       //alert(e) ;
-document.getElementById("message").innerHTML = e;
- document.getElementById("message-area").style.display = "block";
-    }
+  try {
+    if (inputValue === "") throw "The field is empty!";
+    if (isNaN(inputValue)) throw "not a number";
+    inputValue = Number(inputValue);
+  } catch (e) {
+    //alert(e) ;
+    document.getElementById("message").innerHTML = e;
+    document.getElementById("message-area").style.display = "block";
+  }
   unitInput = document.getElementById('unit-input').value;
   document.getElementById("input-display").innerHTML = "Please choose the unit of measure to which you would like to convert " + " " + inputValue + " " + unitInput + " =>";
 }
@@ -35,23 +34,23 @@ function getOutputValue() {
   //window.location.reload();
   unitOutput = document.getElementById('unit-output').value;
   var numberValue = document.getElementById('text-input-value').value;
- //Check if value for unitInput is null
-  if(unitInput != null){
-     //calculate and display values to web page
+  //Check if value for unitInput is null
+  if (unitInput !== null) {
+    //calculate and display values to web page
     var calculatedValue = convertValue(normalise(numberValue, unitInput), unitOutput).toFixed(3);
-  document.getElementById("output-display").innerHTML = numberValue + " " + unitInput + " is equal to " + calculatedValue + " " + unitOutput;
-  }else {
-   //alert("You must select a unit of measure for the value that you would like to convert!");
+    document.getElementById("output-display").innerHTML = numberValue + " " + unitInput + " is equal to " + calculatedValue + " " + unitOutput;
+  } else {
+    //alert("You must select a unit of measure for the value that you would like to convert!");
     document.getElementById("message").innerHTML = "You must select a unit of measure for the value that you would like to convert!";
     document.getElementById("message-area").style.display = "block";
 
-}
+  }
 
 }
 
 //convert the value input to a kilogram scalar
 function normalise(input, givenUnitElementValue) {
-    //check the value selected in the checkbox and return the appropriate value
+  //check the value selected in the checkbox and return the appropriate value
   switch (givenUnitElementValue) {
     case "pounds":
       return input * poundScalar;
@@ -74,7 +73,7 @@ function normalise(input, givenUnitElementValue) {
   }
 }
 
-function clearDisplay(){
+function clearDisplay() {
   window.location.reload();
 }
 
