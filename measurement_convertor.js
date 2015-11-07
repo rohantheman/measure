@@ -18,12 +18,13 @@ function getInputValue() {
   var inputValue = document.getElementById('text-input-value').value;
   try {
     if (inputValue === "") throw "The field is empty!";
-    if (isNaN(inputValue)) throw "not a number";
+    if (isNaN(inputValue)) throw "The value:" + inputValue + " that you have entered is not a number";
     inputValue = Number(inputValue);
   } catch (e) {
     //alert(e) ;
     document.getElementById("message").innerHTML = e;
     document.getElementById("message-area").style.display = "block";
+    document.getElementById("input-display").style.display = "none";
   }
   unitInput = document.getElementById('unit-input').value;
   document.getElementById("input-display").innerHTML = "Please choose the unit of measure to which you would like to convert " + " " + inputValue + " " + unitInput + " =>";
