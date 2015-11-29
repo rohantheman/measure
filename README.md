@@ -1,2 +1,2 @@
 # measure
-Create a measurement convertor
+Create a measurement convertor for TMA1
